@@ -23,8 +23,7 @@ app.add_middleware(
 
 # Initialize Dhan API
 dhan = dhanhq(
-    "1101685567",
-    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGFydG5lcklkIjoiIiwiZXhwIjoxNzU0OTE1NzU0LCJ0b2tlbkNvbnN1bWVyVHlwZSI6IlNFTEYiLCJ3ZWJob29rVXJsIjoiIiwiZGhhbkNsaWVudElkIjoiMTEwMTY4NTU2NyJ9.4HYRy2XOmkDRtvVgI_G9DWuD4cIEPI7kVlehGbDjowOCWZaLLxzCh_ZdLf4gpQ9ge2FsPS1bGWqas5GE-h8Qrw"
+    "client id","api key"
 )
 
 # ====================== Shared Option Chain Cache ======================
@@ -40,13 +39,7 @@ llm_analysis_time = 0
 llm_cache_lock = threading.Lock()
 
 # API key rotation
-API_KEYS = [
-    "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",
-    "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",
-    "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",
-    "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",
-    "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"
-]
+API_KEYS = ["oprnrouter api key]
 USED_KEY_INDEX = -1
 key_lock = threading.Lock()
 def update_llm_analysis():
