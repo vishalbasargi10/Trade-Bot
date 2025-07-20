@@ -1,0 +1,141 @@
+/* App-specific structural styles only */
+.app-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Add to App.css */
+.update-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 15px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+.timestamp {
+  font-weight: 600;
+  margin: 0 8px;
+  color: #2c3e50;
+}
+
+.update-frequency {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-left: 10px;
+}
+
+/* Keep existing styles below */
+.header-container {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.navbar {
+  display: flex;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-btn {
+  flex: 1;
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-btn:hover {
+  background-color: #f5f5f5;
+}
+
+.nav-btn.active {
+  border-bottom: 3px solid #007bff;
+  color: #007bff;
+  font-weight: bold;
+  background-color: #f0f8ff;
+}
+
+.error {
+  color: #f44336;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #ffebee;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Combined view styles */
+.combined-view {
+  display: flex;
+  gap: 20px;
+  align-items: stretch; /* ensure panels are same height */
+}
+
+.chart-section,
+.table-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Let the direct children of each section stretch to fill */
+.chart-section > *,
+.table-section > * {
+  flex: 1;
+}
+
+/* Chart header styles */
+.chart-header {
+  display: flex;
+  margin-bottom: 10px;
+  font-weight: bold;
+  background-color: #f5f5f5;
+  padding: 3px 0;
+  border-radius: 4px;
+}
+
+.strike-header {
+  width: 80px;
+  text-align: center;
+  padding-right: 15px;
+}
+
+.oi-header {
+  flex: 1;
+  text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .combined-view {
+    flex-direction: column;
+  }
+  
+  .chart-section,
+  .table-section {
+    width: 100%;
+  }
+  
+  .table-section {
+    margin-top: 20px;
+  }
+}
+
+/* Loading indicator */
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #666;
+}

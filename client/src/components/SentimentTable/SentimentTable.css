@@ -1,0 +1,167 @@
+/* === Container layout for table + legend === */
+.sentiment-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* === Table Container === */
+.sentiment-table-container {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+}
+
+/* === Table Styling === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Consolas', 'Menlo', monospace;
+}
+
+thead {
+  background-color: #1a237e;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+th {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  padding: 18px 20px; /* generous padding like .chart-header */
+  line-height: 2.5;
+  background-color: #1a237e;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+
+tr {
+  border-bottom: 1px solid #eee;
+  padding:10px;
+}
+
+td {
+  padding: 10px 12px;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.strike-cell {
+  font-weight: bold;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.atm-badge {
+  background: #ff9800;
+  color: white;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+.atm-row {
+  background-color: #e3f2fd;
+  font-weight: 600;
+}
+
+/* === Sentiment Color Labels === */
+.sentiment-label {
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  display: inline-block;
+  text-align: center;
+  min-width: 70px;
+}
+
+.bullish {
+  background-color: #e0f7e9;
+  color: #2e7d32;
+}
+
+.bearish {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+/* === Legend Below Table === */
+.sentiment-legend-below {
+  width: 100%;
+  background: #f7f9fb;
+  padding: 15px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  color: #333;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.legend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+/* Legend Color Boxes */
+.legend-box {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  border-radius: 4px;
+  vertical-align: middle;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect for user interaction polish */
+.legend-box:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+/* Specific legend colors matching table */
+.legend-box.bullish-sentiment { background: #e0f7e9; }
+.legend-box.bearish-sentiment { background: #ffebee; }
+.legend-box.ltp-up { background: #2e7d32; }     /* Dark Green */
+.legend-box.ltp-down { background: #c62828; }   /* Dark Red */
+.legend-box.atm { background: #ff9800; }        /* Orange ATM */
+
+/* Add these new classes */
+.skew-cell {
+  font-weight: bold;
+}
+
+.iv-strength {
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.bullish { color: #4CAF50; }
+.bearish { color: #F44336; }
+.neutral { color: #9e9e9e; }
+
+.high-iv { color: #F44336; }
+.moderate-iv { color: #FFC107; }
+.low-iv { color: #4CAF50; }
+
+/* Added for dynamic sizing */
+.sentiment-table-container table {
+  border-spacing: 0;
+}
+
+.sentiment-table-container thead tr {
+  height: var(--header-height, 50px); /* Fallback value */
+}
+
+.sentiment-table-container tbody tr {
+  height: var(--row-height, 50px); /* Fallback value */
+}
